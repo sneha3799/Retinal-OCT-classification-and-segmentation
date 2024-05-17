@@ -10,7 +10,7 @@ Made a website using Flask then deployed it on AWS EC2 using the following comma
 
 1 Open Powershell and go to the folder containing the project zip file. 
 2 Execute the following cmd -> scp -i ssh_key.pem pythonProject.zip ubuntu@ec2-18-191-25-39.us-east-2.compute.amazonaws.com:
-3 Next, send your files to the server by executing the following command -> > ssh -i "ssh_key.pem" ubuntu@ec2-18-191-25-39.us-east-2.compute.amazonaws.com
+3 Next, send your files to the server by executing the following command -> ssh -i "ssh_key.pem" ubuntu@ec2-18-191-25-39.us-east-2.compute.amazonaws.com
 4 Execute the following commands to get files on the server provided by the EC2 instance 
   - dir
   - sudo apt install zip unzip
