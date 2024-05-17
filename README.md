@@ -8,20 +8,20 @@ For segmentation, we simply thresholded the image masks and resized them. Then w
 After this, deployed the model on AWS EC2 (Elastic Cloud Compute) using Flask. 
 Made a website using Flask then deployed it on AWS EC2 using the following commands.
 
-1 Open Powershell and go to the folder containing the project zip file. 
-2 Execute the following cmd -> scp -i ssh_key.pem pythonProject.zip ubuntu@ec2-18-191-25-39.us-east-2.compute.amazonaws.com:
-3 Next, send your files to the server by executing the following command -> ssh -i "ssh_key.pem" ubuntu@ec2-18-191-25-39.us-east-2.compute.amazonaws.com
-4 Execute the following commands to get files on the server provided by the EC2 instance 
+1. Open Powershell and go to the folder containing the project zip file.
+2. Execute the following cmd -> scp -i ssh_key.pem pythonProject.zip ubuntu@ec2-18-191-25-39.us-east-2.compute.amazonaws.com:
+3. Next, send your files to the server by executing the following command -> ssh -i "ssh_key.pem" ubuntu@ec2-18-191-25-39.us-east-2.compute.amazonaws.com
+4. Execute the following commands to get files on the server provided by the EC2 instance 
   - dir
   - sudo apt install zip unzip
   - unzip pythonProject.zip
   - cd pythonProject
-5 Setup the environment by installing all dependencies using the commands below
+5. Setup the environment by installing all dependencies using the commands below
   - sudo apt-get update
   - sudo apt-get install -y python3-pip
   - pip3 install -r requirements.txt
-6 Run the script by executing python3 app.py command
-7 Connect to the EC2 instance by running the public DNS ended with :8080/ (Ex - http://ec2-18-191-25-39.us-east-2.compute.amazonaws.com:5000/)
+6. Run the script by executing python3 app.py command
+7. Connect to the EC2 instance by running the public DNS ended with :8080/ (Ex - http://ec2-18-191-25-39.us-east-2.compute.amazonaws.com:5000/)
 
 References 
 - https://medium.com/analytics-vidhya/ml-model-deployment-with-flask-using-aws-ec2-part-ii-38ca941e0c4b
