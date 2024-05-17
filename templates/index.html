@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retinal OCT Classification</title>
+</head>
+<body>
+    <h1>Retinal OCT Classification</h1>
+    {% if result %}
+        <p>{{ result }}</p>
+    {% endif %}
+    <form method="post" action="/classify" enctype="multipart/form-data">
+        <label>Upload retinal OCT scan</label>
+        <input type="file" name="scan" accept="image/*">
+        <input type="submit" value="Classify"><br>
+    </form>
+</body>
+</html>
