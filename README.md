@@ -23,6 +23,17 @@ Made a website using Flask then deployed it on AWS EC2 using the following comma
 6. Run the script by executing python3 app.py command
 7. Connect to the EC2 instance by running the public DNS ended with :8080/ (Ex - http://ec2-18-191-25-39.us-east-2.compute.amazonaws.com:5000/)
 
+Steps to deploy on AWS ECS using EC2 launch type/ instance
+1. Create an EC2 instance
+2. Connect to the server from the terminal by running the following command: ssh -i keypair.pem ec2-user@public_IPv4_address
+3. Switch to root user: sudo su
+4. Run the cmd: yum update -y
+5. Install docker on Ubuntu:  curl -fsSL https://get.docker.com -o get-docker.sh and yum install docker -y
+6. Verify the installation: docker --version
+7. Start docker: systemctl start docker
+8. Verify if the docker is running: systemctl status docker
+9. 
+
 References 
 - https://medium.com/analytics-vidhya/ml-model-deployment-with-flask-using-aws-ec2-part-ii-38ca941e0c4b
 - https://www.youtube.com/watch?v=_rwNTY5Mn40&t=1715s
