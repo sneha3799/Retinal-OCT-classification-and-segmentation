@@ -30,7 +30,7 @@ Steps to deploy on AWS ECS using EC2 launch type/ instance
 3. Start docker: sudo systemctl enable docker, sudo systemctl start docker
 4. Verify if the docker is running: sudo systemctl status docker
 5. Create docker image: vim Dockerfile, press i to insert, once edited, press esc to come to normal mode, save and exit by typing :wq!
-6. Then build image and containerize your web application: sudo docker build -t retinaloct-image . -> sudo docker run -d -p 8080:8080 --name project-container retinaloct-image -> sudo docker ps -> sudo docker run -p 8080:8080 retinaloct-image
+6. Then build image and containerize your web application: sudo docker build -t retinaloct-image . -> sudo docker run -d -p 8080:8080 --name project-container retinaloct-image -> sudo docker ps -> sudo docker run -p 8080:8080 retinaloct-image (http://ec2-18-223-210-52.us-east-2.compute.amazonaws.com:8080/)
 7. Create ECR repository
 8. Create IAM role with the AdministratorAccess for the EC2 service/ use-case
 9. Create IAM > Users > User with policy AmazonEC2ContainerRegistryFullAccess to attach ECR permissions to your IAM user for pushing/ pulling images to ECR
@@ -47,8 +47,13 @@ Steps to deploy on AWS ECS using EC2 launch type/ instance
     - sudo docker tag <docker_image_name>:latest 739157243984.dkr.ecr.us-east-2.amazonaws.com/ecr-repo:latest
     - sudo docker push 739157243984.dkr.ecr.us-east-2.amazonaws.com/ecr-repo:latest
 14. Create Application Load Balancer, EC2 > Load Balancers > Create Load Balancer > Application Load Balancer
-15. 
+15. Create Task execution role, IAM > Roles > Create Role with AmazonECSTaskExecutionRolePolicy permission
+16. Create ECS Task definition
+17. Create ECS Cluster
+18. Create ECS Service
+19. The application is running at http://retinaloct-alb-665565372.us-east-2.elb.amazonaws.com:8080/
 
 References 
 - https://medium.com/analytics-vidhya/ml-model-deployment-with-flask-using-aws-ec2-part-ii-38ca941e0c4b
+- https://www.youtube.com/watch?v=6Hj-stf51Bc&list=PLqoUmUbJ_zDHPwK-ZWATXiYrUXwWkLY65&index=1
 - https://www.youtube.com/watch?v=_rwNTY5Mn40&t=1715s
