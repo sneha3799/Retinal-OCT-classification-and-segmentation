@@ -31,7 +31,9 @@ Steps to deploy on AWS ECS using EC2 launch type/ instance
 4. Verify if the docker is running: sudo systemctl status docker
 5. Create docker image: vim Dockerfile, press i to insert, once edited, press esc to come to normal mode, save and exit by typing :wq!
 6. Then build image and containerize your web application: sudo docker build -t retinaloct-image . -> sudo docker run -d -p 8080:8080 --name project-container retinaloct-image -> sudo docker ps -> sudo docker run -p 8080:8080 retinaloct-image
-7. 
+7. Create ECR repository
+8. Create IAM role with the AdministratorAccess for the EC2 service/ use-case
+9. 
 
 References 
 - https://medium.com/analytics-vidhya/ml-model-deployment-with-flask-using-aws-ec2-part-ii-38ca941e0c4b
