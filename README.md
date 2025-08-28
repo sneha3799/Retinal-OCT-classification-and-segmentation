@@ -25,18 +25,13 @@ Made a website using Flask then deployed it on AWS EC2 using the following comma
 7. Connect to the EC2 instance by running the public DNS ended with :8080/ (Ex - http://ec2-18-191-25-39.us-east-2.compute.amazonaws.com:5000/)
 
 Steps to deploy on AWS ECS using EC2 launch type/ instance
-1. Create an EC2 instance
-2. Connect to the server from the terminal by running the following command: ssh -i keypair.pem ec2-user@public_IPv4_address
-3. Switch to root user: sudo su
-4. Run the cmd: yum update -y
-5. Install docker on Ubuntu:  curl -fsSL https://get.docker.com -o get-docker.sh and yum install docker -y
-6. Verify the installation: docker --version
-7. Start docker: systemctl start docker
-8. Verify if the docker is running: systemctl status docker
-9. Make a new directory then switch to it: mkdir project, cd project
-10. Create a dockerfile: vim Dockerfile
-11. Create index.html: vim index.html
-12. 
+1. Install docker on Ubuntu:  sudo apt update, sudo apt install docker.io
+2. Verify the installation: docker --version
+3. Start docker: sudo systemctl enable docker, sudo systemctl start docker
+4. Verify if the docker is running: sudo systemctl status docker
+5. Create docker image: vim Dockerfile, press i to insert, once edited, press esc to come to normal mode, save and exit by typing :wq!
+6. Then build image and containerize your web application: sudo docker build -t retinaloct-image . -> sudo docker run -d -p 8080:8080 --name project-container retinaloct-image -> sudo docker run -p 8080:8080 retinaloct-image
+7. 
 
 References 
 - https://medium.com/analytics-vidhya/ml-model-deployment-with-flask-using-aws-ec2-part-ii-38ca941e0c4b
