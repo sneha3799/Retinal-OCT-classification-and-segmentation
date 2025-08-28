@@ -30,7 +30,7 @@ Steps to deploy on AWS ECS using EC2 launch type/ instance
 3. Start docker: sudo systemctl enable docker, sudo systemctl start docker
 4. Verify if the docker is running: sudo systemctl status docker
 5. Create docker image: vim Dockerfile, press i to insert, once edited, press esc to come to normal mode, save and exit by typing :wq!
-6. Then build image and containerize your web application: sudo docker build -t retinaloct-image . -> sudo docker run -d -p 8080:8080 --name project-container retinaloct-image -> sudo docker run -p 8080:8080 retinaloct-image
+6. Then build image and containerize your web application: sudo docker build -t retinaloct-image . -> sudo docker run -d -p 8080:8080 --name project-container retinaloct-image -> sudo docker ps -> sudo docker run -p 8080:8080 retinaloct-image
 7. 
 
 References 
