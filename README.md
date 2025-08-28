@@ -33,7 +33,14 @@ Steps to deploy on AWS ECS using EC2 launch type/ instance
 6. Then build image and containerize your web application: sudo docker build -t retinaloct-image . -> sudo docker run -d -p 8080:8080 --name project-container retinaloct-image -> sudo docker ps -> sudo docker run -p 8080:8080 retinaloct-image
 7. Create ECR repository
 8. Create IAM role with the AdministratorAccess for the EC2 service/ use-case
-9. 
+9. Create an access key in AWS IAM and use that to configure the user profile via the AWS CLI in Amazon Linux/ Ubuntu. To create access key go to IAM> Users> Security Credentials > Create access key
+10. To install AWS CLI in the ubuntu machine of EC2 instance
+    - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    - unzip awscliv2.zip
+    - sudo ./aws/install
+    - aws --version
+11. Then run aws configure in terminal to configure user profile
+12. 
 
 References 
 - https://medium.com/analytics-vidhya/ml-model-deployment-with-flask-using-aws-ec2-part-ii-38ca941e0c4b
