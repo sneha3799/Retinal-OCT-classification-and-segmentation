@@ -41,7 +41,12 @@ Steps to deploy on AWS ECS using EC2 launch type/ instance
     - sudo ./aws/install
     - aws --version
 12. Then run aws configure in terminal to configure user profile
-13. 
+13. To push docker image to ECR
+    - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 739157243984.dkr.ecr.us-east-2.amazonaws.com
+    - sudo docker images
+    - sudo docker tag <docker_image_name>:latest 739157243984.dkr.ecr.us-east-2.amazonaws.com/ecr-repo:latest
+    - sudo docker push 739157243984.dkr.ecr.us-east-2.amazonaws.com/ecr-repo:latest
+
 
 References 
 - https://medium.com/analytics-vidhya/ml-model-deployment-with-flask-using-aws-ec2-part-ii-38ca941e0c4b
