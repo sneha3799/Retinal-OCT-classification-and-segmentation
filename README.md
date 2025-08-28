@@ -46,7 +46,8 @@ Steps to deploy on AWS ECS using EC2 launch type/ instance
     - sudo docker images
     - sudo docker tag <docker_image_name>:latest 739157243984.dkr.ecr.us-east-2.amazonaws.com/ecr-repo:latest
     - sudo docker push 739157243984.dkr.ecr.us-east-2.amazonaws.com/ecr-repo:latest
-14.
+14. Create Application Load Balancer, EC2 > Load Balancers > Create Load Balancer > Application Load Balancer
+15. 
 
 References 
 - https://medium.com/analytics-vidhya/ml-model-deployment-with-flask-using-aws-ec2-part-ii-38ca941e0c4b
